@@ -1,0 +1,21 @@
+#!/system/bin/sh
+MODDIR=/data/adb/andtermenv
+if [ -z "$1" ]; then
+echo "错误：路径不能为空";exit 1
+fi
+if [ ! -e "$1" ]; then
+echo "错误：路径不存在 → $1";exit 1
+fi
+if [ ! -f "$1" ]; then
+echo "错误：这不是一个文件 → $1";exit 1
+fi
+if [ ! -w "$1" ]; then
+echo "错误：文件不可写 → $1";exit 1
+fi
+echo "
+# ===andterm_env===
+export PATH=${MODDIR}/usr/bin:\$PATH
+export LD_LIBRARY_PATH=${MODDIR}/usr/lib:\$LD_LIBRARY_PATH
+# ---andterm_env---
+" >> "$1"
+echo '已添加环境变量配置'
