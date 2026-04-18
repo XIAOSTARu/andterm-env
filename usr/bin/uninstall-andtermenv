@@ -1,0 +1,15 @@
+#!/system/bin/sh
+if [ -z "$1" ]; then
+echo "错误：路径不能为空";exit 1
+fi
+if [ ! -e "$1" ]; then
+echo "错误：路径不存在 → $1";exit 1
+fi
+if [ ! -f "$1" ]; then
+echo "错误：这不是一个文件 → $1";exit 1
+fi
+if [ ! -w "$1" ]; then
+echo "错误：文件不可写 → $1";exit 1
+fi
+sed -i '/^# ===andterm_env===/,/^# ---andterm_env---/d' "$1"
+echo '已移除环境变量配置'

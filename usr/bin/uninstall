@@ -1,0 +1,21 @@
+#!/system/bin/sh
+if [ -z "$1" ]; then
+echo "Usage: $0 <URL>"
+exit 1
+fi
+input_filename="$1"
+base_dir="/data/adb/andtermenv/usr/var/pkg"
+file_path="${base_dir}/${input_filename}.txt"
+if [ ! -f "$file_path" ]; then
+echo "not found file: $file_path"
+exit 1
+fi
+echo 'uninstalling...'
+while IFS= read -r line; do
+if [ -z "$line" ]; then
+continue
+fi
+rm -f "$line"
+done < "$file_path"
+rm -f "$file_path"
+echo "Done."

@@ -1,0 +1,3 @@
+#!/system/bin/sh
+echo -n 'AndtermEnv version:'
+sed -n 's/^version=//p' /data/adb/andtermenv/andtermenv.prop

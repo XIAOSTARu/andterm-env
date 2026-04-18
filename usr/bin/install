@@ -1,0 +1,38 @@
+#!/system/bin/sh
+LOCAL_PATH=/data/adb/andtermenv/usr/tmp
+INSTALL_FILE_="$LOCAL_PATH/_PKG_"
+DECOMP_DIR="$LOCAL_PATH/Decompressed"
+pkgname="${1##*/}.txt"
+if [ -z "$1" ]; then
+echo "Usage: $0 <URL>"
+exit 1
+fi
+mkdir -p "$LOCAL_PATH" "$DECOMP_DIR"
+echo "Downloading..."
+if ! curl -L -f "$1" -o "$INSTALL_FILE_"; then
+echo "Download failed"
+exit 1
+fi
+echo "Extracting package..."
+if ! bsdtar -xf "$INSTALL_FILE_" -C "$DECOMP_DIR"; then
+echo "Extract failed"
+exit 1
+fi
+echo "Extracting data.tar.xz..."
+if ! bsdtar -xf "$DECOMP_DIR/data.tar.xz" -C "$DECOMP_DIR"; then
+echo "Extract data.tar.xz failed"
+exit 1
+fi
+> $LOCAL_PATH/../var/pkg/$pkgname
+echo "Installing..."
+cp -rf "$DECOMP_DIR/data/data/com.termux/files/usr/"* "$LOCAL_PATH/../"
+find "$DECOMP_DIR/data/data/com.termux/files/usr" \( -type f -o -type l \) | while read -r file; do
+SRC="$DECOMP_DIR/data/data/com.termux/files/usr"
+DST="$LOCAL_PATH/.."
+dest="${file//$SRC/$DST}"
+dest=$(realpath "$dest")
+echo "$dest" >> $LOCAL_PATH/../var/pkg/$pkgname
+done
+echo "Cleaning..."
+rm -rf "$DECOMP_DIR" "$INSTALL_FILE_"
+echo "Done."
