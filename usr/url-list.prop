@@ -1,0 +1,10 @@
+python=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/p/python/python_3.13.13-1_aarch64.deb
+python-dev=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/p/python/python-dev_3.13.13-1_aarch64.deb
+python-pip=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/p/python-pip/python-pip_24.2-1_all.deb
+python-numpy=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/p/python-numpy/python-numpy_1.26.4-1_aarch64.deb
+python-pillow=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/p/python-pillow/python-pillow_10.3.0-1_aarch64.deb
+nodejs=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/n/nodejs/nodejs_25.8.2_aarch64.deb
+npm=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/n/npm/npm_10.9.0-1_all.deb
+clang=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/c/clang/clang_18.1.8-1_aarch64.deb
+cmake=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/c/cmake/cmake_3.30.2-1_aarch64.deb
+git=https://mirrors.ustc.edu.cn/termux/termux-main/pool/main/g/git/git_2.46.0-1_aarch64.deb
