@@ -6,3 +6,8 @@ After the installation is completed, you need to enter the following command.
 ```
 /data/adb/andterm_env/usr/bin/install-andtermenv "/data/user/0/...your...terminal...path.../bash.bashrc"
 ```
+You can use the following commands to install and uninstall packages.
+```
+install (url, Must be in deb format, And it is a termux package)
+uninstall (pkg,Your installation packages are all in the /usr/var/pkg/ directory. If you need to uninstall a package, paste the file name directly.There is no ".txt"file name here.)
+```
