@@ -12,4 +12,4 @@ install <url> # Must be in deb format, And it is a termux package
 uninstall <pkg> # Your installation packages are all in the /usr/var/pkg/ directory. If you need to uninstall a package, paste the file name directly.There is no ".txt"file name here.)
 ```
 
-that [bsdtar](https://github.com/libarchive/libarchive/tree/master) is used in this warehouse.
+that [bsdtar](https://github.com/libarchive/libarchive/) is used in this warehouse.
