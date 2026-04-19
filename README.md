@@ -8,6 +8,6 @@ After the installation is completed, you need to enter the following command.
 ```
 You can use the following commands to install and uninstall packages.
 ```
-install (url, Must be in deb format, And it is a termux package)
-uninstall (pkg,Your installation packages are all in the /usr/var/pkg/ directory. If you need to uninstall a package, paste the file name directly.There is no ".txt"file name here.)
+install <url> # Must be in deb format, And it is a termux package
+uninstall <pkg> # Your installation packages are all in the /usr/var/pkg/ directory. If you need to uninstall a package, paste the file name directly.There is no ".txt"file name here.)
 ```
